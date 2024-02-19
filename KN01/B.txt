@@ -1,0 +1,12 @@
+1. docker --version
+2. docker search --filter "is-official=true" ubuntu
+docker search --filter "is-official=true" nginx
+3.
+docker run: creates and runs a docker container
+-d: detach mode (starts in background and control is returned to cmd)
+-p 80:80 : chooses port 80 of the host system to connect to port 80 of the container
+docker/getting-started: the name of the docker-images of which it should be created
+4.
+- 1.: docker pull nginx
+- 2.: docker create -p 8081:80 --name my-nginx nginx
+- 3: docker start my-nginx
