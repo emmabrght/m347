@@ -1,0 +1,8 @@
+FROM mariadb
+
+ENV MYSQL_DATABASE=mydatabase 
+ENV MYSQL_USER=dbuser 
+ENV MYSQL_PASSWORD=dbpassword 
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+
+EXPOSE 3306
