@@ -1,10 +1,10 @@
 <?php
-    $servername = "kn02b-db";
-    $username = "dbuser";
-    $password = "dbpassword";
-    $dbname = "mydatabase";
+    $servername = getenv('DB_HOST'); //getenv = get enviroment variables
+    $username = getenv('DB_USER');
+    $password = getenv('DB_PASSWORD');
+    $dbname = getenv('DB_NAME');
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
