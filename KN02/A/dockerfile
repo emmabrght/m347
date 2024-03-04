@@ -1,6 +1,11 @@
 # specifies the image
 FROM nginx 
-# copies the durrent directory to the nginx web root
-COPY index.html /usr/share/nginx/html/index.html
+
+# Set working directory to nginx web root
+WORKDIR /usr/share/nginx/html
+
+# Copy index.html from current directory to nginx web root
+COPY index.html .
+
 # will listen on port 80 at runtime
 EXPOSE 80
