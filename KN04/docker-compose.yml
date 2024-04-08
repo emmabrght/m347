@@ -1,0 +1,31 @@
+version: "3.8"
+name: kn04-compose-b
+services:
+  database:
+    image: mariadb:latest
+    container_name: m347-kn04a-db-b
+    ports:
+      - "3306:3306"
+    environment:
+      - MARIADB_ROOT_PASSWORD=example
+    networks:
+      - kn04-network
+
+  web:
+    image: m347-kn04a-web:latest
+    container_name: m347-kn04a-web-b
+    ports:
+      - "80:80"
+    depends_on:
+      - database
+    networks:
+      - kn04-network
+
+networks:
+  kn04-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          ip_range: 172.20.5.0/24
+          gateway: 172.20.5.254
